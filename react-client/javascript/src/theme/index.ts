@@ -8,11 +8,20 @@ import {
 const theme: Theme = responsiveFontSizes(
     createMuiTheme({
         typography: {
-            fontFamily: "Open Sans",
+            fontFamily: "glacial indifference",
+            button: {
+                color: "white",
+                fontWeight: 400,
+            },
+            h2: {
+                color: "gray",
+                fontSize: "24px",
+                textDecoration: "none",
+                fontFamily: "fairwater-sans"
+            }
         },
         palette: {
             background: {
-                default: "#f2f3f7",
                 paper: "#ffffff",
             },
             secondary: {
@@ -20,7 +29,7 @@ const theme: Theme = responsiveFontSizes(
             },
             primary: {
                 light: "#36496a",
-                main: "#213559",
+                main: "#43B6DE",
             },
         },
     })
