@@ -1,50 +1,52 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import Grid from "@material-ui/core/Grid";
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LoginButton from '../Login/LoginButton';
 import "./Header.scss";
 
 const useStyles = makeStyles(theme => ({
     title: {
         color: "white"
     },
-    grid: {
-        height: "100%"
+    topGrid: {
+        borderBottom: "1px solid gray"
     },
     link: {
-        borderBottom: "1px solid white",
         transition: "--var(--hoverTransition)",
         "&:hover": {
             // borderBottom: "1px solid gray"
             opacity: ".6",
-            cursor: "pointer"
-        }
+            cursor: "pointer",
+            color: "#4BB6F9"
+
+        },
+        "&:active": {
+            color: "#4BB6F9"
+        },
+        textDecoration: "none",
+        fontSize: "18px"
     }
 }))
 
 const Header: React.FC<{}> = props => {
     const classes = useStyles();
     return <nav id="header-nav">
-        <Grid container justify="space-between" alignItems="center" className={classes.grid}>
-            <Grid container item sm={10} alignItems="center">
-                <Grid container md={3} item justify="space-around">
-                    <Link to="/">
-                        <img height="50px" src="/logo/logo.svg" id="logo" />
-                    </Link>
-                </Grid>
-                <Grid container md={5} item justify="space-around">
-                    <Link to="/featured" style={{ textDecoration: "none" }} className={classes.link}>
-                        <Typography variant="h2">Featured</Typography>
-                    </Link>
-                    <Link to="/personalized" style={{ textDecoration: "none" }} className={classes.link}>
-                        <Typography variant="h2">Best Sellers</Typography>
-                    </Link>
-                </Grid>
+        <Grid container justify="space-between" alignItems="stretch" className={classes.topGrid}>
+            <Grid container item md={4} alignItems="flex-end">
+                <Link to="/" className={classes.link}>
+                    Aneesh - Software Engineer
+                </Link>
             </Grid>
-
-            <Grid item >
-                <LoginButton />
+            <Grid md={4} item container justify="space-between" alignItems="flex-end">
+                <Grid item>
+                    <Link to="/" className={classes.link}>About me</Link>
+                </Grid>
+                <Grid>
+                    <Link to="/" className={classes.link}>Work</Link>
+                </Grid>
+                <Grid item>
+                    <Link to="/" className={classes.link}>Resume</Link>
+                </Grid>
             </Grid>
         </Grid>
     </nav>

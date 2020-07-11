@@ -17,7 +17,8 @@ const theme: Theme = responsiveFontSizes(
                 color: "gray",
                 fontSize: "24px",
                 textDecoration: "none",
-                fontFamily: "fairwater-sans"
+                fontFamily: "fairwater-sans",
+                fontWeight: 700
             }
         },
         palette: {
@@ -29,7 +30,7 @@ const theme: Theme = responsiveFontSizes(
             },
             primary: {
                 light: "#36496a",
-                main: "#43B6DE",
+                main: "#3AB766",
             },
         },
     })
