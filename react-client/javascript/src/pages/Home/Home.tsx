@@ -1,8 +1,9 @@
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import config_text from "static/text";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Layout from "../../components/layout/Layout";
-import { Grid, Typography, makeStyles } from "@material-ui/core";
 async function load() {
     const result = await import('wasm');
 
@@ -30,7 +31,7 @@ const Home = () => {
         <Grid direction="column" container justify="flex-start">
             <Grid item>
                 <Typography variant="h1">My Mission</Typography><br /><br />
-                <Typography variant="subtitle1" className={classes.missionText}>Enable others to realize their small business dreams and visions through beautiful, mobile responsive, full-stack websites.</Typography>
+                <Typography variant="subtitle1" className={classes.missionText}>{config_text.mission}</Typography>
             </Grid>
         </Grid>
     </Layout>
