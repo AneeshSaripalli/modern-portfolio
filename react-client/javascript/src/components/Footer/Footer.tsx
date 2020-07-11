@@ -4,7 +4,7 @@ import "./Footer.scss"
 
 const Footer: React.FC<{}> = props => {
     return <div className="footer">
-        <div>SHOPSY ONLINE</div>
+        <div>Aneesh Saripalli</div>
     </div>
 }
 

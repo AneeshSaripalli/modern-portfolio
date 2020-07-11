@@ -13,13 +13,22 @@ const theme: Theme = responsiveFontSizes(
                 color: "white",
                 fontWeight: 400,
             },
+            h1: {
+                fontSize: "24px",
+                display: "inline",
+                color: "#4BB6F9",
+            },
             h2: {
                 color: "gray",
                 fontSize: "24px",
                 textDecoration: "none",
-                fontFamily: "fairwater-sans",
                 fontWeight: 700
-            }
+            },
+            subtitle1: {
+                fontFamily: "glacial indifference",
+                fontSize: "20px"
+            },
+
         },
         palette: {
             background: {
@@ -30,7 +39,7 @@ const theme: Theme = responsiveFontSizes(
             },
             primary: {
                 light: "#36496a",
-                main: "#3AB766",
+                main: "#4BB6F9",
             },
         },
     })

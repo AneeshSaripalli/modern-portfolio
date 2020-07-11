@@ -9,22 +9,18 @@ const useStyles = makeStyles(theme => ({
         color: "white"
     },
     topGrid: {
-        borderBottom: "1px solid gray"
+        height: "40px"
     },
     link: {
-        transition: "--var(--hoverTransition)",
-        "&:hover": {
-            // borderBottom: "1px solid gray"
-            opacity: ".6",
-            cursor: "pointer",
-            color: "#4BB6F9"
-
-        },
-        "&:active": {
-            color: "#4BB6F9"
-        },
+        padding: theme.spacing(.5),
         textDecoration: "none",
-        fontSize: "18px"
+        textTransform: "uppercase",
+        fontSize: "18px",
+        color: 'black',
+        transition: "ease 250ms all",
+        "&:hover": {
+            opacity: ".6"
+        }
     }
 }))
 
@@ -39,13 +35,13 @@ const Header: React.FC<{}> = props => {
             </Grid>
             <Grid md={4} item container justify="space-between" alignItems="flex-end">
                 <Grid item>
-                    <Link to="/" className={classes.link}>About me</Link>
+                    <Link to="/about" className={classes.link}>About me</Link>
                 </Grid>
                 <Grid>
-                    <Link to="/" className={classes.link}>Work</Link>
+                    <Link to="/work" className={classes.link}>Work</Link>
                 </Grid>
                 <Grid item>
-                    <Link to="/" className={classes.link}>Resume</Link>
+                    <Link to="/resume" className={classes.link}>Resume</Link>
                 </Grid>
             </Grid>
         </Grid>
