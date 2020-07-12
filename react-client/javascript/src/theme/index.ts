@@ -27,7 +27,8 @@ const theme: Theme = responsiveFontSizes(
                 color: "gray",
                 fontSize: "22px",
                 textDecoration: "none",
-                fontWeight: 700,
+                fontWeight: 400,
+                marginBottom: "5px"
             },
             h3: {
                 fontFamily: "objektiv-mk1, sans-serif",

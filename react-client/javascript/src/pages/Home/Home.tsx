@@ -60,18 +60,22 @@ const Home = () => {
             </Grid>
             <Grid item className={classes.gridSection}>
                 <Typography variant="h1" className={classes.gridHeader}>What can you expect?</Typography><br /><br />
-
                 <Typography variant="h2" className={classes.missionText}>Cooperative Exploration</Typography>
+
                 <Typography variant="body1">
                     {config_text.home.what.exploration}
                 </Typography><br />
 
                 <Typography variant="h2" className={classes.missionText}>Iterative Process</Typography>
-                <Typography variant="body1">{config_text.home.what.exploration}</Typography><br />
+                <Typography variant="body1">
+                    {config_text.home.what.iterative_process}
+                </Typography><br />
 
-                <Typography variant="h2" className={classes.missionText}>Phase Conclusion</Typography>
-                <Typography variant="body1">{config_text.home.what.exploration}</Typography><br />
 
+                <Typography variant="h2" className={classes.missionText}>Phase "Conclusion"</Typography>
+                <Typography variant="body1">
+                    {config_text.home.what.iterative_conclusion}
+                </Typography><br />
 
             </Grid>
             <Links />
