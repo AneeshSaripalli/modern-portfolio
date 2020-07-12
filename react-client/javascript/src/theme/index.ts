@@ -24,11 +24,9 @@ const theme: Theme = responsiveFontSizes(
             h2: {
                 fontFamily: "objektiv-mk1, sans-serif",
                 fontStyle: "normal",
-                color: "gray",
-                fontSize: "22px",
-                textDecoration: "none",
+                color: "#36C9E3",
+                fontSize: "20px",
                 fontWeight: 400,
-                marginBottom: "5px"
             },
             h3: {
                 fontFamily: "objektiv-mk1, sans-serif",
@@ -46,7 +44,12 @@ const theme: Theme = responsiveFontSizes(
             body1: {
                 fontFamily: "objektiv-mk1, sans-serif",
                 fontStyle: "normal",
-                fontSize: "18px"
+                fontSize: "16px"
+            }, caption: {
+                fontFamily: "objektiv-mk1, sans-serif",
+                fontStyle: "normal",
+                color: "black",
+                fontSize: "12px"
             }
 
         },
@@ -58,7 +61,7 @@ const theme: Theme = responsiveFontSizes(
                 main: "#4aa0fe",
             },
             primary: {
-                light: "#36496a",
+                light: "#36C9E3",
                 main: "#4BB6F9",
             },
         },

@@ -1,4 +1,4 @@
-import { makeStyles, useMediaQuery, useTheme, Typography } from '@material-ui/core';
+import { makeStyles, useMediaQuery, useTheme, Typography, Avatar } from '@material-ui/core';
 import Grid from "@material-ui/core/Grid";
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -31,18 +31,16 @@ const Header: React.FC<{}> = props => {
 
     return <nav id="header-nav">
         <Grid container justify="space-between" alignItems="flex-end" className={classes.topGrid}>
-            <Grid item sm={3}>
-                <Grid item>
-                    <Typography variant="h3">
-                        <Link to="/" className={classes.link}>
-                            {mobile ? "Aneesh" : "Aneesh - Software Engineer"}
-                        </Link>
+            <Grid item sm={4}>
+                <Link to="/" className={classes.link}>
+                    <Typography display="inline" align="center" variant="h3">
+                        {mobile ? "Aneesh" : "Aneesh - Software Engineer"}
                     </Typography>
-                </Grid>
+                </Link>
             </Grid>
             {mobile ? <MobileNavMenu /> : <DesktopNavMenu />}
-        </Grid>
-    </nav>
+        </Grid >
+    </nav >
 }
 
 export default Header;

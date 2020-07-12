@@ -40,20 +40,20 @@ const useStyles = makeStyles(theme => ({
 
 const Links: React.FC<{}> = props => {
     const classes = useStyles();
-    return <Grid container item justify="space-around" className={classes.gridSection}>
-        <Link to="/about#consulting" className={classes.link}>
-            <Box className={classes.btnBox}>
-                <Button variant="text" fullWidth className={clsx([classes.consulting, classes.linkButton])}>
-                    <Grid container direction="row" justify="center" alignItems="center">
-                        <Typography variant="h3">
-                            See what I do
+    return (
+        <Grid container item justify="space-around" className={classes.gridSection}>
+            <Link to="/about#consulting" className={classes.link}>
+                <Box className={classes.btnBox}>
+                    <Button variant="text" fullWidth className={clsx([classes.consulting, classes.linkButton])}>
+                        <Grid container direction="row" justify="center" alignItems="center">
+                            <Typography variant="h3">
+                                See what I do
                         </Typography>
-                    </Grid>
-                </Button>
-            </Box>
-        </Link>
-
-    </Grid>
+                        </Grid>
+                    </Button>
+                </Box>
+            </Link>
+        </Grid>)
 }
 
 export default Links;
