@@ -13,19 +13,22 @@ const useStyles = makeStyles(theme => ({
     linkButton: {
         color: "white",
         height: "100%",
-        animation: "Bounce 1s linear infinite",
         boxShadow: "0 5px 10px rgba(0,0,0,0.50)",
     },
     "@keyframes Bounce": {
         "0%": {
-            bottom: "0px"
-        },
-        "100%": {
-            bottom: "0px"
+            transform: "translateY(-5px)"
         },
         "50%": {
-            bottom: "100px"
+            transform: "translateY(5px)"
+        },
+        "100%": {
+            transform: "translateY(-5px)"
         }
+    },
+    bounce: {
+        animation: `$Bounce 2000ms ${theme.transitions.easing.sharp}`,
+        animationIterationCount: "infinite"
     },
     consulting: {
         background: `linear-gradient(45deg, #36C9E3, #66FA6F)`,
@@ -41,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 const Links: React.FC<{}> = props => {
     const classes = useStyles();
     return (
-        <Grid container item justify="space-around" className={classes.gridSection}>
+        <Grid container item justify="space-around" className={clsx([classes.gridSection, classes.bounce])}>
             <Link to="/about#consulting" className={classes.link}>
                 <Box className={classes.btnBox}>
                     <Button variant="text" fullWidth className={clsx([classes.consulting, classes.linkButton])}>

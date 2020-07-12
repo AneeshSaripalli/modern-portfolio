@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
     header: {
         width: "100%",
-        border: "none"
+        border: "none",
     }
 }));
 

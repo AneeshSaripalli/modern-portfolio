@@ -15,9 +15,9 @@ const useStyles = makeStyles(theme => ({
     menu: {
         padding: theme.spacing(.5),
         borderRadius: theme.spacing(1) * 2,
-        border: '1px solid rgba(10,10,10,.1)',
+        border: `1px solid rgba(10, 10, 10, .1)`,
         "&:hover": {
-            backgroundColor: "rgba(10,10,10,.2)"
+            backgroundColor: "rgba(10, 10, 10, .2)"
         }
     }
 }))
