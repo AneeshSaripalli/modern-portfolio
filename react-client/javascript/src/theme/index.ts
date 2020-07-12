@@ -16,7 +16,7 @@ const theme: Theme = responsiveFontSizes(
             h1: {
                 fontFamily: "objektiv-mk1, sans-serif",
                 fontStyle: "normal",
-                fontSize: "24px",
+                fontSize: "28px",
                 fontWeight: 400,
                 display: "inline",
                 color: "#4BB6F9",
@@ -25,7 +25,7 @@ const theme: Theme = responsiveFontSizes(
                 fontFamily: "objektiv-mk1, sans-serif",
                 fontStyle: "normal",
                 color: "gray",
-                fontSize: "24px",
+                fontSize: "22px",
                 textDecoration: "none",
                 fontWeight: 700,
             },

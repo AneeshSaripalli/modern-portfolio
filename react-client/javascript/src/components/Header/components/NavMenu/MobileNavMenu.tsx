@@ -12,15 +12,12 @@ const useStyles = makeStyles(theme => ({
     topGrid: {
         height: "40px"
     },
-    link: {
+    menu: {
         padding: theme.spacing(.5),
-        textDecoration: "none",
-        textTransform: "uppercase",
-        fontSize: "18px",
-        color: 'black',
-        transition: "ease 250ms all",
+        borderRadius: theme.spacing(1) * 2,
+        border: '1px solid rgba(10,10,10,.1)',
         "&:hover": {
-            opacity: ".6"
+            backgroundColor: "rgba(10,10,10,.2)"
         }
     }
 }))
@@ -31,7 +28,7 @@ const MobileNavMenu: React.FC<{}> = props => {
     const openMenu = () => setMenuOpen(true);
 
     return <Grid sm={1} item>
-        <Menu onClick={openMenu} />
+        <Menu onClick={openMenu} className={classes.menu} />
         <MobileNavDialog open={menuOpen} setOpen={setMenuOpen} />
     </Grid >
 }

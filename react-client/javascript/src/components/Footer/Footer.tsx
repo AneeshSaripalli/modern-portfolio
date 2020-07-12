@@ -1,10 +1,10 @@
+import { Typography } from "@material-ui/core";
 import React from "react";
-import { Grid } from "@material-ui/core";
-import "./Footer.scss"
+import "./Footer.scss";
 
 const Footer: React.FC<{}> = props => {
     return <div className="footer">
-        <div>Aneesh Saripalli</div>
+        <div><Typography display="inline" variant="h3">Aneesh Saripalli</Typography></div>
     </div>
 }
 

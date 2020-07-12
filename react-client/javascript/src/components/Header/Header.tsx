@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
         height: "40px"
     },
     link: {
-        padding: theme.spacing(.5),
         textDecoration: "none",
         color: 'black',
         transition: "ease 250ms all",
@@ -36,7 +35,7 @@ const Header: React.FC<{}> = props => {
                 <Grid item>
                     <Typography variant="h3">
                         <Link to="/" className={classes.link}>
-                            Aneesh - Software Engineer
+                            {mobile ? "Portfolio" : "Aneesh - Software Engineer"}
                         </Link>
                     </Typography>
                 </Grid>

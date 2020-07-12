@@ -25,7 +25,9 @@ const useStyles = makeStyles(theme => ({
     link: {
         textDecoration: 'none',
         color: "black",
-
+    },
+    dialog: {
+        background: `linear-gradient(135deg, #ffffff, rgba(10,10,10,.15))`
     }
 }));
 
@@ -34,7 +36,7 @@ const MobileNavDialog: React.FC<IProps> = ({ open, setOpen }) => {
     const classes = useStyles();
     const handleClose = () => setOpen(false);
     return (<Dialog fullWidth maxWidth="md" open={open} onClose={handleClose} TransitionComponent={Transition}>
-        <List>
+        <List className={classes.dialog}>
             <Link to="/about" className={classes.link}>
                 <ListItem button >
                     <ListItemText primary="About Me" />
