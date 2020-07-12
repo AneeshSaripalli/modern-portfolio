@@ -1,11 +1,10 @@
-import { Button, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import config_text from "static/text";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Layout from "../../components/layout/Layout";
-import clsx from "clsx";
-import { Link } from "react-router-dom";
+import Links from "./components/Links";
 async function load() {
     const result = await import('wasm');
 
@@ -15,8 +14,6 @@ load();
 
 const useStyles = makeStyles(theme => ({
     missionText: {
-        // animation: `$fadeIn 3000ms ${theme.transitions.easing.easeInOut}`,
-        // animationDelay: "1s",
         opacity: 1,
     },
     gridHeader: {
@@ -36,21 +33,16 @@ const useStyles = makeStyles(theme => ({
     gridSection: {
         marginBottom: theme.spacing(8),
     },
-    linkButton: {
-        boxShadow: "0 5px 10px rgba(0,0,0,0.50)",
-        color: "white",
-        fontWeight: 600,
-        width: "150px",
-        height: '80px',
-    },
-    industry: {
-        background: `linear-gradient(45deg, #795CFA, #36C9E3)`,
-    },
-    consulting: {
-        color: "white",
-        fontWeight: 600,
-        backgroundColor: theme.palette.primary.main,
-        background: `linear-gradient(45deg, #F542A4, #F0E035)`
+    "@keyframes Bounce": {
+        "0%": {
+            bottom: "0px"
+        },
+        "100%": {
+            bottom: "0px"
+        },
+        "50%": {
+            bottom: "100px"
+        }
     }
 }));
 
@@ -63,28 +55,26 @@ const Home = () => {
                 <Typography variant="body1" className={classes.missionText}>{config_text.home.mission}</Typography>
             </Grid>
             <Grid item className={classes.gridSection}>
-                <Typography variant="h1" className={classes.gridHeader}>How do I do it?</Typography><br /><br />
+                <Typography variant="h1" className={classes.gridHeader}>How do I work with you?</Typography><br /><br />
                 <Typography variant="body1" className={classes.missionText}>{config_text.home.how}</Typography>
             </Grid>
             <Grid item className={classes.gridSection}>
-                <Typography variant="h1" className={classes.gridHeader}>What can I do?</Typography><br /><br />
-                <Typography variant="body1" className={classes.missionText}>{config_text.home.what}</Typography>
-            </Grid>
-            <Grid container item justify="space-around" className={classes.gridSection}>
-                <Link to="/about#industry" style={{ textDecoration: "none" }}>
-                    <Button className={clsx([classes.industry, classes.linkButton])}>
-                        <Grid container direction="row" justify="center" alignItems="center">
-                            Industry Work
-                    </Grid>
-                    </Button>
-                </Link>
+                <Typography variant="h1" className={classes.gridHeader}>What can you expect?</Typography><br /><br />
 
-                <Button className={clsx([classes.consulting, classes.linkButton])}>
-                    <Grid container direction="row" justify="center" alignItems="center">
-                        Consulting
-                    </Grid>
-                </Button>
+                <Typography variant="h2" className={classes.missionText}>Cooperative Exploration</Typography>
+                <Typography variant="body1">
+                    {config_text.home.what.exploration}
+                </Typography><br />
+
+                <Typography variant="h2" className={classes.missionText}>Iterative Process</Typography>
+                <Typography variant="body1">{config_text.home.what.exploration}</Typography><br />
+
+                <Typography variant="h2" className={classes.missionText}>Phase Conclusion</Typography>
+                <Typography variant="body1">{config_text.home.what.exploration}</Typography><br />
+
+
             </Grid>
+            <Links />
         </Grid>
     </Layout>
 }

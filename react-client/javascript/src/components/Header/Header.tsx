@@ -35,7 +35,7 @@ const Header: React.FC<{}> = props => {
                 <Grid item>
                     <Typography variant="h3">
                         <Link to="/" className={classes.link}>
-                            {mobile ? "Portfolio" : "Aneesh - Software Engineer"}
+                            {mobile ? "Aneesh" : "Aneesh - Software Engineer"}
                         </Link>
                     </Typography>
                 </Grid>
