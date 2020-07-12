@@ -1,4 +1,4 @@
-import { makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
+import { makeStyles, useMediaQuery, useTheme, Typography } from '@material-ui/core';
 import Grid from "@material-ui/core/Grid";
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -16,13 +16,11 @@ const useStyles = makeStyles(theme => ({
     link: {
         padding: theme.spacing(.5),
         textDecoration: "none",
-        textTransform: "uppercase",
-        fontSize: "18px",
         color: 'black',
         transition: "ease 250ms all",
         "&:hover": {
             opacity: ".6"
-        }
+        },
     }
 }))
 
@@ -36,9 +34,11 @@ const Header: React.FC<{}> = props => {
         <Grid container justify="space-between" alignItems="flex-end" className={classes.topGrid}>
             <Grid item sm={3}>
                 <Grid item>
-                    <Link to="/" className={classes.link}>
-                        Aneesh - Software Engineer
-                    </Link>
+                    <Typography variant="h3">
+                        <Link to="/" className={classes.link}>
+                            Aneesh - Software Engineer
+                        </Link>
+                    </Typography>
                 </Grid>
             </Grid>
             {mobile ? <MobileNavMenu /> : <DesktopNavMenu />}

@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import Grid from "@material-ui/core/Grid";
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -27,13 +27,19 @@ const DesktopNavMenu: React.FC<{}> = props => {
 
     return <Grid md={4} item container justify="space-between" alignItems="flex-end">
         <Grid item>
-            <Link to="/about" className={classes.link}>About me</Link>
+            <Typography variant="h3">
+                <Link to="/about" className={classes.link}>About me</Link>
+            </Typography>
         </Grid>
         <Grid>
-            <Link to="/work" className={classes.link}>Work</Link>
+            <Typography variant="h3">
+                <Link to="/work" className={classes.link}>Work</Link>
+            </Typography>
         </Grid>
         <Grid item>
-            <Link to="/resume" className={classes.link}>Resume</Link>
+            <Typography variant="h3">
+                <Link to="/resume" className={classes.link}>Resume</Link>
+            </Typography>
         </Grid>
     </Grid>
 }

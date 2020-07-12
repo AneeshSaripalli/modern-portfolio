@@ -5,20 +5,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html {
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-@font-face {
-  font-family: "glacial indifference";
-  src: local("glacial indifference"), url(fonts/GlacialIndifference-Regular.otf) format("otf");
-}
-
 #root {
   --hoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  /* font-family: fairwater-sans, sans-serif; */
-  font-family: glacial indifference, sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
