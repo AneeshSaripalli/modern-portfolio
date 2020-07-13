@@ -15,6 +15,17 @@ const config_text = {
             Lastly, we schedule a retrospective to reflect on what went well and what we need to improve on."
         }
     },
+    work: {
+        industry: [
+            {
+                title: "Title",
+                description: "This is a description"
+            }
+        ],
+        consulting: [
+
+        ]
+    }
 };
 
 export default config_text;
