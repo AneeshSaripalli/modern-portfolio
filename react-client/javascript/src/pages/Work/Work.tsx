@@ -3,6 +3,7 @@ import clsx from "clsx";
 import React from 'react';
 import config_text from "static/text";
 import Industry from "./components/Industry";
+import Consulting from "./components/Consulting";
 
 const useStyles = makeStyles(theme => ({
     infoText: {
@@ -77,12 +78,7 @@ const Work: React.FC<{}> = props => {
         <Industry />
         <Divider light className={classes.spaced} />
 
-        <Grid item className={classes.gridSection}>
-            <Typography variant="h1" >Consulting</Typography><br /><br />
-            <Typography variant="body1" className={classes.infoText}>{config_text.home.how}</Typography>
-        </Grid>
-        <Divider light className={classes.spaced} />
-
+        <Consulting />
 
     </Grid>
 

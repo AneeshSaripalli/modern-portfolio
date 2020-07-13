@@ -6,12 +6,18 @@ type ProjectEntry = {
     tags: string[]
 }
 
+type ConsultingEntry = {
+    project: string;
+    duration: string;
+    description: string;
+    tags: string[];
+}
 
 type ConfigText = {
     home: any,
     work: {
         industry: ProjectEntry[],
-        consulting: ProjectEntry[]
+        consulting: ConsultingEntry[]
     }
 }
 
@@ -63,7 +69,24 @@ const config_text: ConfigText = {
             }
         ],
         consulting: [
-
+            {
+                project: "3IE.IO",
+                description: "Worked on both the UI and backend of a HR tool designed to improve employee engagement using decentralized identifiers.",
+                duration: "2 months",
+                tags: []
+            },
+            {
+                project: "Buskhotel",
+                description: "Implemented an advanced UI and admin management panel for a hotel deals website focused on American Spanish speakers.",
+                duration: "9 months",
+                tags: []
+            },
+            {
+                project: "Rotohive",
+                description: "Built the backend for a fantasy football betting site built around Ethereum & ERC20 crypto tokens.",
+                duration: "4 months",
+                tags: []
+            }
         ]
     }
 };
