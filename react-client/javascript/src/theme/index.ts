@@ -33,23 +33,28 @@ const theme: Theme = responsiveFontSizes(
                 fontStyle: "normal",
                 fontSize: "18px",
                 textTransform: "uppercase",
-                margin: 0,
-                padding: 0,
+
             },
             subtitle1: {
                 fontFamily: "objektiv-mk1, sans-serif",
                 fontStyle: "normal",
-                fontSize: "20px"
+                fontSize: "18px"
             },
             body1: {
                 fontFamily: "objektiv-mk1, sans-serif",
                 fontStyle: "normal",
                 fontSize: "16px"
-            }, caption: {
+            },
+            body2: {
+                fontFamily: "objektiv-mk1, sans-serif",
+                fontStyle: "normal",
+                fontSize: "14px"
+            },
+            caption: {
                 fontFamily: "objektiv-mk1, sans-serif",
                 fontStyle: "normal",
                 color: "black",
-                fontSize: "12px"
+                fontSize: "11px",
             }
 
         },

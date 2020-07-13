@@ -1,4 +1,4 @@
-import { Avatar, Divider, Grid, makeStyles, Typography, TextField, Button } from "@material-ui/core";
+import { Divider, Grid, makeStyles, TextField, Typography } from "@material-ui/core";
 import clsx from "clsx";
 import React from 'react';
 import config_text from "static/text";
@@ -57,8 +57,10 @@ const Work: React.FC<{}> = props => {
         <Grid container direction="row" item alignItems="center" justify="flex-start" className={clsx([classes.gridSection, classes.fadeIn])}>
             <Grid item>
                 <Typography variant="h1" >Work</Typography><br />
-                <Typography variant="body1" className={clsx([classes.fadeIn, classes.filter])}>
-                    This is where I talk about some select projects I've had the fortune of working on.
+            </Grid>
+            <Grid item>
+                <Typography variant="caption" className={clsx([classes.fadeIn, classes.filter])}>
+                    Some amazing projects I've been fortunate to work on with some great people!
                 </Typography>
             </Grid>
         </Grid>

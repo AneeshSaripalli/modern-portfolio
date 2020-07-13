@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { Box, Grid, makeStyles, Typography, Divider } from "@material-ui/core";
 import React from "react";
 import config_text from "static/text";
 
@@ -46,24 +46,37 @@ const useStyles = makeStyles(theme => ({
     },
     filter: {
         color: "black"
+    },
+    divider: {
+        marginTop: theme.spacing(4)
     }
 }));
 
 const Industry: React.FC<{}> = props => {
     const classes = useStyles();
+
+    const { industry } = config_text.work;
+
     return <Grid item className={classes.gridSection}>
-        <Typography variant="h1" >Industry</Typography><br /><br />
-        {config_text.work.industry.map(({ title, description }) => (
-            <>
+        <Typography variant="h1" ><u>Industry</u></Typography><br /><br />
+        {industry.map(({ title, description, duration, tags }, idx) => (
+            <Box className={classes.spaced}>
                 <Typography variant="h2" className={classes.infoText}>
                     {title}
                 </Typography>
-                <Typography variant="body1" className={classes.infoText}>
+                <Typography variant="subtitle1" className={classes.infoText}>
+                    {duration}
+                </Typography>
+                <Typography variant="caption" className={classes.infoText}>
+                    <i>My job in one sentence -</i>
+                </Typography>
+                <Typography variant="body2" className={classes.infoText}>
                     {description}
                 </Typography>
-            </>))}
-
-    </Grid>
+                {idx !== industry.length - 1 ? <Divider light className={classes.divider} /> : <></>}
+            </Box>))
+        }
+    </Grid >
 
 }
 

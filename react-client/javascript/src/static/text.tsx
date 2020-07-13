@@ -1,5 +1,21 @@
+type ProjectEntry = {
+    title: string,
+    start: string,
+    duration: string,
+    description: string,
+    tags: string[]
+}
 
-const config_text = {
+
+type ConfigText = {
+    home: any,
+    work: {
+        industry: ProjectEntry[],
+        consulting: ProjectEntry[]
+    }
+}
+
+const config_text: ConfigText = {
     home: {
         mission: "Enable others to realize their business's dreams and visions through custom, individualized software solutions.",
         how: "We work together to discover your business's needs, brainstorm visual designs that solve the problem, and architect a technical solution that best fits the requirements.\
@@ -18,8 +34,32 @@ const config_text = {
     work: {
         industry: [
             {
-                title: "Title",
-                description: "This is a description"
+                title: "Software Engineer, Waymo",
+                start: "June 2020",
+                duration: "1 month",
+                description: "Advance and manage tooling around Waymo car-driving simulation infrastructure.",
+                tags: ["Javascript"]
+            },
+            {
+                title: "Software Engineer, Toyota",
+                start: "August 2019",
+                duration: "5 months",
+                description: "Design an advanced backend for a customized supply-chain management system using Quorum blockchain technology.",
+                tags: []
+            },
+            {
+                title: "SDE Intern, Amazon Web Services",
+                duration: "3 months",
+                start: "June 2019",
+                description: "Extended the AWS Organizations tool suite by providing an API to search for policies, organizations, and accounts.",
+                tags: []
+            },
+            {
+                title: "SDE Intern, Intel Corporation",
+                start: "June 2018",
+                duration: "1 year",
+                description: "Researched and implemented a PSO heuristic algorithm to identify optimal stadium camera placements for VR purposes.",
+                tags: []
             }
         ],
         consulting: [
