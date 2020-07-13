@@ -1,7 +1,10 @@
 import { Box, Divider, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import config_text from "static/text";
+import { ConsultingEntry } from "static/text";
 
+type IProps = {
+    entries: ConsultingEntry[];
+};
 
 const useStyles = makeStyles(theme => ({
     infoText: {
@@ -52,14 +55,12 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Consulting: React.FC<{}> = props => {
+const Consulting: React.FC<IProps> = ({ entries }) => {
     const classes = useStyles();
-
-    const { consulting } = config_text.work;
 
     return <Grid item className={classes.gridSection}>
         <Typography variant="h1" ><u>Consulting</u></Typography><br /><br />
-        {consulting.map(({ project, description, duration, tags }, idx) => (
+        {entries.map(({ project, description, duration, tags }, idx) => (
             <Box className={classes.spaced}>
                 <Typography variant="h2" className={classes.infoText}>
                     {project}
@@ -73,7 +74,7 @@ const Consulting: React.FC<{}> = props => {
                 <Typography variant="body2" className={classes.infoText}>
                     {description}
                 </Typography>
-                {idx !== consulting.length - 1 ? <Divider light className={classes.divider} /> : <></>}
+                {idx !== entries.length - 1 ? <Divider light className={classes.divider} /> : <></>}
             </Box>))
         }
     </Grid >

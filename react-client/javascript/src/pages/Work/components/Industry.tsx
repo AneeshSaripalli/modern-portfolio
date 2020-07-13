@@ -1,7 +1,10 @@
-import { Box, Grid, makeStyles, Typography, Divider } from "@material-ui/core";
+import { Box, Divider, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import config_text from "static/text";
+import { ProjectEntry } from "static/text";
 
+type IProps = {
+    entries: ProjectEntry[];
+}
 
 const useStyles = makeStyles(theme => ({
     infoText: {
@@ -52,14 +55,12 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Industry: React.FC<{}> = props => {
+const Industry: React.FC<IProps> = ({ entries }) => {
     const classes = useStyles();
-
-    const { industry } = config_text.work;
 
     return <Grid item className={classes.gridSection}>
         <Typography variant="h1" ><u>Industry</u></Typography><br /><br />
-        {industry.map(({ title, description, duration, tags }, idx) => (
+        {entries.map(({ title, description, duration, tags }, idx) => (
             <Box className={classes.spaced}>
                 <Typography variant="h2" className={classes.infoText}>
                     {title}
@@ -73,7 +74,7 @@ const Industry: React.FC<{}> = props => {
                 <Typography variant="body2" className={classes.infoText}>
                     {description}
                 </Typography>
-                {idx !== industry.length - 1 ? <Divider light className={classes.divider} /> : <></>}
+                {idx !== entries.length - 1 ? <Divider light className={classes.divider} /> : <></>}
             </Box>))
         }
     </Grid >

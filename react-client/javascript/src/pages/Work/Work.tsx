@@ -1,9 +1,10 @@
 import { Divider, Grid, makeStyles, TextField, Typography } from "@material-ui/core";
 import clsx from "clsx";
-import React from 'react';
-import config_text from "static/text";
-import Industry from "./components/Industry";
+import React, { ChangeEvent, useState } from 'react';
+import config_text, { ProjectEntry, ConsultingEntry } from "static/text";
 import Consulting from "./components/Consulting";
+import Industry from "./components/Industry";
+import keyword_map from "static/keyword_map";
 
 const useStyles = makeStyles(theme => ({
     infoText: {
@@ -51,8 +52,29 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+
 const Work: React.FC<{}> = props => {
     const classes = useStyles();
+    const [filter, setFilter] = useState<string>("");
+
+    const { industry, consulting } = config_text.work;
+
+    function filterEntries<T extends { tags: string[] }>(industry: T[], filter: string): T[] {
+        if (!filter) return industry;
+
+        const normalized_filter: string = keyword_map.get(filter) || filter;
+
+        return industry.filter(
+            entry => entry.tags.findIndex(
+                tag => ((keyword_map.get(tag) || tag).indexOf(normalized_filter) >= 0)
+            ) >= 0
+        )
+    };
+
+    const onFilterChange = (event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+        console.log("Value", event.target.value)
+        setFilter(event.target.value);
+    };
 
     return <Grid direction="column" container justify="flex-start">
         <Grid container direction="row" item alignItems="center" justify="flex-start" className={clsx([classes.gridSection, classes.fadeIn])}>
@@ -71,14 +93,20 @@ const Work: React.FC<{}> = props => {
                 If you're looking for any specific technologies, here's a place to search.
             </Typography>
             <Grid container item lg={6}>
-                <TextField fullWidth label="Search (ex. React, Docker)" placeholder="React.js" className={classes.filter} />
+                <TextField fullWidth label="Search (ex. React, Docker)" placeholder="React.js" className={classes.filter}
+                    onChange={onFilterChange}
+                />
             </Grid>
         </Grid>
         <Divider light className={classes.spaced} placeholder="React" />
-        <Industry />
+        <Industry entries={
+            filterEntries(industry, filter)
+        } />
         <Divider light className={classes.spaced} />
 
-        <Consulting />
+        <Consulting entries={
+            filterEntries(consulting, filter)
+        } />
 
     </Grid>
 

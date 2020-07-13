@@ -1,4 +1,4 @@
-type ProjectEntry = {
+export type ProjectEntry = {
     title: string,
     start: string,
     duration: string,
@@ -6,14 +6,14 @@ type ProjectEntry = {
     tags: string[]
 }
 
-type ConsultingEntry = {
+export type ConsultingEntry = {
     project: string;
     duration: string;
     description: string;
     tags: string[];
 }
 
-type ConfigText = {
+export type ConfigText = {
     home: any,
     work: {
         industry: ProjectEntry[],
@@ -44,28 +44,28 @@ const config_text: ConfigText = {
                 start: "June 2020",
                 duration: "1 month",
                 description: "Advance and manage tooling around Waymo car-driving simulation infrastructure.",
-                tags: ["Javascript"]
+                tags: ["Javascript", "C++", "Python", "Angular"]
             },
             {
                 title: "Software Engineer, Toyota",
                 start: "August 2019",
                 duration: "5 months",
                 description: "Design an advanced backend for a customized supply-chain management system using Quorum blockchain technology.",
-                tags: []
+                tags: ["Nodejs", "Quorum", "Typescript"]
             },
             {
                 title: "SDE Intern, Amazon Web Services",
                 duration: "3 months",
                 start: "June 2019",
                 description: "Extended the AWS Organizations tool suite by providing an API to search for policies, organizations, and accounts.",
-                tags: []
+                tags: ["Java", "Guice", "Lombok", "Mockito"]
             },
             {
                 title: "SDE Intern, Intel Corporation",
                 start: "June 2018",
                 duration: "1 year",
                 description: "Researched and implemented a PSO heuristic algorithm to identify optimal stadium camera placements for VR purposes.",
-                tags: []
+                tags: ["C++", "Python", "Java", "R"]
             }
         ],
         consulting: [
@@ -73,19 +73,19 @@ const config_text: ConfigText = {
                 project: "3IE.IO",
                 description: "Worked on both the UI and backend of a HR tool designed to improve employee engagement using decentralized identifiers.",
                 duration: "2 months",
-                tags: []
+                tags: ["React.js", "Node.js", "Typescript", "Javascript", "MongoDB", "NGINX", "Kubernetes", "Docker", "Google Cloud Platform (GCP)", "Google Kubernetes Engine (GKE)", "CSS", "HTML"]
             },
             {
                 project: "Buskhotel",
                 description: "Implemented an advanced UI and admin management panel for a hotel deals website focused on American Spanish speakers.",
                 duration: "9 months",
-                tags: []
+                tags: ["React.js", "Typescript", "Redux", "Javascript", "DynamoDB", "Nodejs", "OAuth", "Firebase", "Elasticsearch", "Redis", "NGINX", "AWS", "EC2", "Typescript", "CSS", "HTML", "REST"]
             },
             {
                 project: "Rotohive",
                 description: "Built the backend for a fantasy football betting site built around Ethereum & ERC20 crypto tokens.",
                 duration: "4 months",
-                tags: []
+                tags: ["Nodejs", "Ethereum", "ERC20", "Firebase", "Web3js", "Javascript"]
             }
         ]
     }
