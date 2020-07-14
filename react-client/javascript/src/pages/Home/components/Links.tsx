@@ -45,7 +45,7 @@ const Links: React.FC<{}> = props => {
     const classes = useStyles();
     return (
         <Grid container item justify="space-around" className={clsx([classes.gridSection, classes.bounce])}>
-            <Link to="/about#consulting" className={classes.link}>
+            <Link to="/about" className={classes.link}>
                 <Box className={classes.btnBox}>
                     <Button variant="text" fullWidth className={clsx([classes.consulting, classes.linkButton])}>
                         <Grid container direction="row" justify="center" alignItems="center">
