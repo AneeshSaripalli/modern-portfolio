@@ -1,0 +1,40 @@
+version: "3"
+services:
+  # react front end client & wasm modules
+  react-client:
+    stdin_open: true
+    image: react-client
+    build:
+      context: react-client
+      dockerfile: Dockerfile
+      args:
+        - GITHUB_AUTH_TOKEN=${GITHUB_AUTH_TOKEN}
+    depends_on:
+      - wasm-base
+      - protobufs
+    ports:
+      - 3001:3000
+  # wasm build base file
+  #   - image includes a Node + WASM build + run environment + live reload
+  wasm-base:
+    image: wasm-base
+    build:
+      context: react-client/wasm
+      dockerfile: Dockerfile
+  # gateway to proxy requests to both the client & node gateway
+  nginx-gateway:
+    restart: always
+    depends_on:
+      - react-client
+    build:
+      context: ./nginx-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+  protobufs:
+    build:
+      context: ./protos
+      dockerfile: Dockerfile
+      args:
+        - GITHUB_AUTH_TOKEN=${GITHUB_AUTH_TOKEN}

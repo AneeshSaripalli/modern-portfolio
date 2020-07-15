@@ -18,12 +18,8 @@ RUN cd javascript && NODE_ENV=development npm install
 
 ADD javascript javascript
 
-RUN cd /app/javascript && npm run build
+ADD javascript/docker_scripts/start.sh .
+RUN chmod +x start.sh
 
-# NGINX web server setup
-FROM fholzer/nginx-brotli
 
-WORKDIR /nginx
-
-COPY ./javascript/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=0 /app/javascript/build /etc/nginx/html
+ENTRYPOINT [ "./start.sh" ]

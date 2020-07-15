@@ -13,7 +13,7 @@ services:
     restart: always
     build:
       context: node-gateway
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       args:
         - GITHUB_AUTH_TOKEN=${GITHUB_AUTH_TOKEN}
     hostname: node-gateway
@@ -28,7 +28,7 @@ services:
     image: react-client
     build:
       context: react-client
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       args:
         - GITHUB_AUTH_TOKEN=${GITHUB_AUTH_TOKEN}
     volumes:
@@ -58,7 +58,7 @@ services:
       context: ./nginx-gateway
       dockerfile: Dockerfile
     ports:
-      - "3000:80"
+      - "3001:80"
 
   protobufs:
     build:
