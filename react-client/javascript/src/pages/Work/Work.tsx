@@ -1,10 +1,10 @@
 import { Divider, Grid, makeStyles, TextField, Typography } from "@material-ui/core";
 import clsx from "clsx";
 import React, { ChangeEvent, useState } from 'react';
-import config_text, { ProjectEntry, ConsultingEntry } from "static/text";
+import keyword_map from "static/keyword_map";
+import config_text from "static/text";
 import Consulting from "./components/Consulting";
 import Industry from "./components/Industry";
-import keyword_map from "static/keyword_map";
 
 const useStyles = makeStyles(theme => ({
     infoText: {

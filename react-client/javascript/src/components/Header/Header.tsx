@@ -1,10 +1,10 @@
-import { makeStyles, useMediaQuery, useTheme, Typography, Avatar } from '@material-ui/core';
+import { makeStyles, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import Grid from "@material-ui/core/Grid";
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./Header.scss";
-import MobileNavMenu from './components/NavMenu/MobileNavMenu';
 import DesktopNavMenu from './components/NavMenu/DesktopNavMenu';
+import MobileNavMenu from './components/NavMenu/MobileNavMenu';
+import "./Header.scss";
 
 const useStyles = makeStyles(theme => ({
     title: {

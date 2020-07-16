@@ -61,7 +61,7 @@ const Consulting: React.FC<IProps> = ({ entries }) => {
     return <Grid item className={classes.gridSection}>
         <Typography variant="h1" ><u>Consulting</u></Typography><br /><br />
         {entries.map(({ project, description, duration, tags }, idx) => (
-            <Box className={classes.spaced}>
+            <Box key={idx} className={classes.spaced}>
                 <Typography variant="h2" className={classes.infoText}>
                     {project}
                 </Typography>

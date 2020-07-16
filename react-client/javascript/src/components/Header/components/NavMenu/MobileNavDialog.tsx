@@ -1,9 +1,8 @@
-import { AppBar, Button, Dialog, Divider, IconButton, List, ListItem, ListItemText, makeStyles, Toolbar, Typography } from "@material-ui/core";
-import CloseIcon from '@material-ui/icons/Close';
-import React from "react";
-
+import { Dialog, Divider, List, ListItem, ListItemText, makeStyles } from "@material-ui/core";
 import Slide, { SlideProps } from '@material-ui/core/Slide';
+import React from "react";
 import { Link } from "react-router-dom";
+
 
 type IProps = {
     open: boolean,

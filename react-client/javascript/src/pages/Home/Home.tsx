@@ -1,4 +1,4 @@
-import { Avatar, Divider, Grid, makeStyles, Typography, Box, Fade } from "@material-ui/core";
+import { Avatar, Divider, Fade, Grid, makeStyles, Typography } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
 import config_text from "static/text";

@@ -1,8 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import Grid from "@material-ui/core/Grid";
-import React, { useState } from 'react';
 import Menu from "@material-ui/icons/Menu";
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import MobileNavDialog from './MobileNavDialog';
 
 const useStyles = makeStyles(theme => ({
