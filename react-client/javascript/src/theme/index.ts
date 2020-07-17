@@ -63,7 +63,7 @@ const theme: Theme = responsiveFontSizes(
                 paper: "#ffffff",
             },
             secondary: {
-                main: "#4aa0fe",
+                main: "#66FA6F",
             },
             primary: {
                 light: "#36C9E3",

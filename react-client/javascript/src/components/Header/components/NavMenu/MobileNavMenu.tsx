@@ -5,12 +5,6 @@ import React, { useState } from 'react';
 import MobileNavDialog from './MobileNavDialog';
 
 const useStyles = makeStyles(theme => ({
-    title: {
-        color: "white"
-    },
-    topGrid: {
-        height: "40px"
-    },
     menu: {
         padding: theme.spacing(.5),
         borderRadius: theme.spacing(1) * 2,

@@ -43,7 +43,7 @@ const ContentLayout: React.FC<IProps> = (props) => {
         <Grid item className={classes.header}>
             {header}
         </Grid>
-        <Grid item className={classes.body}>
+        <Grid container alignItems="center" item className={classes.body}>
             {children}
         </Grid>
         <Grid item className={classes.footer}>

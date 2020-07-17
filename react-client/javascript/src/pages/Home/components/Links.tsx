@@ -33,8 +33,7 @@ const useStyles = makeStyles(theme => ({
     consulting: {
         background: `linear-gradient(45deg, #36C9E3, #66FA6F)`,
         fontWeight: 600,
-        boxShadow: "0px "
-
+        boxShadow: "0px"
     },
     link: {
         textDecoration: "none"
