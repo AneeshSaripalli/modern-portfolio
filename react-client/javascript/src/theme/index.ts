@@ -18,8 +18,7 @@ const theme: Theme = responsiveFontSizes(
                 fontStyle: "normal",
                 fontSize: "28px",
                 fontWeight: 400,
-                display: "inline",
-                color: "#4BB6F9",
+                color: "#4BB6F9"
             },
             h2: {
                 fontFamily: "objektiv-mk1, sans-serif",

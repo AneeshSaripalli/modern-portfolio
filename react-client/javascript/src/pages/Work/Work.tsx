@@ -1,4 +1,4 @@
-import { Divider, Grid, makeStyles, TextField, Typography } from "@material-ui/core";
+import { Divider, Grid, makeStyles, TextField, Typography, Fade } from "@material-ui/core";
 import clsx from "clsx";
 import React, { ChangeEvent, useState } from 'react';
 import keyword_map from "static/keyword_map";
@@ -87,27 +87,29 @@ const Work: React.FC<{}> = props => {
                 </Typography>
             </Grid>
         </Grid>
-
-        <Grid container className={classes.gridSection} >
-            <Typography variant="h2">
-                If you're looking for any specific technologies, here's a place to search.
+        <Fade in timeout={4000}>
+            <Grid item>
+                <Grid container className={classes.gridSection} >
+                    <Typography variant="h2">
+                        If you're looking for any specific technologies, here's a place to search.
             </Typography>
-            <Grid container item lg={6}>
-                <TextField fullWidth label="Search (ex. React, Docker)" placeholder="React.js" className={classes.filter}
-                    onChange={onFilterChange}
-                />
+                    <Grid container item lg={6}>
+                        <TextField fullWidth label="Search (ex. React, Docker)" placeholder="React.js" className={classes.filter}
+                            onChange={onFilterChange}
+                        />
+                    </Grid>
+                </Grid>
+                <Divider light className={classes.spaced} placeholder="React" />
+                <Industry entries={
+                    filterEntries(industry, filter)
+                } />
+                <Divider light className={classes.spaced} />
+
+                <Consulting entries={
+                    filterEntries(consulting, filter)
+                } />
             </Grid>
-        </Grid>
-        <Divider light className={classes.spaced} placeholder="React" />
-        <Industry entries={
-            filterEntries(industry, filter)
-        } />
-        <Divider light className={classes.spaced} />
-
-        <Consulting entries={
-            filterEntries(consulting, filter)
-        } />
-
+        </Fade>
     </Grid>
 
 }

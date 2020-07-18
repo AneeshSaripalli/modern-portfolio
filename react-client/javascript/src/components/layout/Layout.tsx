@@ -17,8 +17,13 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: "1440px",
         flexDirection: "column",
         alignItems: "center",
-        paddingLeft: "5%",
-        paddingRight: "5%"
+        paddingLeft: "2%",
+        paddingRight: "2%",
+        [theme.breakpoints.down("md")]: {
+            paddingLeft: "5%",
+            paddingRight: "5%",
+        },
+        backgroundColor: "white"
     },
     body: {
         flex: 1,

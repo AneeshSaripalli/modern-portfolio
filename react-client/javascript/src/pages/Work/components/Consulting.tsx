@@ -74,7 +74,6 @@ const Consulting: React.FC<IProps> = ({ entries }) => {
                 <Typography variant="body2" className={classes.infoText}>
                     {description}
                 </Typography>
-                {idx !== entries.length - 1 ? <Divider light className={classes.divider} /> : <></>}
             </Box>))
         }
     </Grid >

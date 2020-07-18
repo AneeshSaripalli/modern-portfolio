@@ -3,12 +3,6 @@ import clsx from "clsx";
 import React from "react";
 import config_text from "static/text";
 import Links from "./components/Links";
-async function load() {
-    const result = await import('wasm');
-
-    result.start_websocket();
-}
-load();
 
 const useStyles = makeStyles(theme => ({
     infoText: {
@@ -45,17 +39,19 @@ const Home = () => {
     const classes = useStyles();
     return (
         <Grid direction="column" container justify="flex-start">
-            <Fade timeout={2000} in>
-                <Grid container direction="row" item alignItems="center" justify="flex-start" className={classes.gridSection}>
-                    <Grid item sm={2}>
-                        <Avatar variant="circle" className={classes.avatar} alt="Face picture" src="/assets/images/face.jpg" />
-                    </Grid>
+            <Grid container direction="row" item alignItems="center" justify="flex-start" className={classes.gridSection}>
+                <Fade timeout={2000} in>
                     <Grid item>
-                        <Typography variant="h1" >Hey, it's great to meet you!</Typography><br />
-                        <Typography variant="caption">I hope your day goes well.</Typography>
+                        <Grid item sm={2}>
+                            <Avatar variant="circle" className={classes.avatar} alt="Face picture" src="/assets/images/face.jpg" />
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="h1" >Hey, it's great to meet you!</Typography><br />
+                            <Typography variant="caption">I hope your day goes well.</Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Fade>
+                </Fade>
+            </Grid>
             <Fade timeout={4000} in>
                 <Grid item>
                     <Divider light className={classes.spaced} />
@@ -90,7 +86,6 @@ const Home = () => {
                             {config_text.home.what.iterative_conclusion}
                         </Typography><br />
                     </Grid>
-                    <Divider light className={classes.spaced} />
 
                     <Links />
                 </Grid>
