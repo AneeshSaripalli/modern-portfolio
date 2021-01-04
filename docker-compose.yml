@@ -1,72 +1,23 @@
 version: "3"
 services:
-  # kafka image
-  kafka:
-    image: spotify/kafka
-    hostname: kafka
-    ports:
-      - 9092:9092
-      - 2181:2181
-  # nodejs gateway for auth and message issuance
-  #   - need to architect what exactly this service does
-  node-gateway:
-    restart: always
-    build:
-      context: node-gateway
-      dockerfile: Dockerfile.dev
-      args:
-        - GITHUB_AUTH_TOKEN=${GITHUB_AUTH_TOKEN}
-    hostname: node-gateway
-    depends_on:
-      - kafka
-    volumes:
-      - /app/node_modules
-      - ./node-gateway/src:/app/src
-  # react front end client & wasm modules
+  # react front end client
   react-client:
     stdin_open: true
     image: react-client
     build:
       context: react-client
       dockerfile: Dockerfile.dev
-      args:
-        - GITHUB_AUTH_TOKEN=${GITHUB_AUTH_TOKEN}
+    env_file:
+      - .env
     volumes:
-      - /app/javascript/node_modules
-      - /app/wasm-build
       - ./react-client/javascript:/app/javascript
-      - ./react-client/wasm/src:/app/wasm/src
-    depends_on:
-      - wasm-base
-      - protobufs
-  # wasm build base file
-  #   - image includes a Node + WASM build + run environment + live reload
-  wasm-base:
-    image: wasm-base
-    build:
-      context: react-client/wasm
-      dockerfile: Dockerfile
-    volumes:
-      - ./react-client/wasm/src:/app/wasm/src
   # gateway to proxy requests to both the client & node gateway
   nginx-gateway:
     restart: always
     depends_on:
       - react-client
-      - node-gateway
     build:
       context: ./nginx-gateway
       dockerfile: Dockerfile
     ports:
       - "3001:80"
-
-  protobufs:
-    build:
-      context: ./protos
-      dockerfile: Dockerfile
-      args:
-        - GITHUB_AUTH_TOKEN=${GITHUB_AUTH_TOKEN}
-    volumes:
-      - ./protos/build:/protos/build
-      - ./protos/node_modules:/protos/node_modules
-      - ./protos/package.json:/protos/package.json
