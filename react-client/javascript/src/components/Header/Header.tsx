@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     color: "black",
+    cursor: "pointer",
     transition: "ease 250ms all",
     "&:hover": {
       opacity: ".6",
