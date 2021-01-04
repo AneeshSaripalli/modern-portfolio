@@ -45,37 +45,8 @@ const Home = () => {
   const classes = useStyles();
   return (
     <Grid direction="column" container justify="flex-start">
-      <Grid
-        container
-        direction="row"
-        item
-        alignItems="center"
-        justify="flex-start"
-        className={classes.gridSection}
-      >
-        <Fade timeout={2000} in>
-          <Grid item>
-            <Grid item sm={2}>
-              <Avatar
-                variant="circle"
-                className={classes.avatar}
-                alt="Face picture"
-                src="/assets/images/face.jpg"
-              />
-            </Grid>
-            <Grid item>
-              <Typography variant="h1">Hey, it's great to meet you!</Typography>
-              <br />
-              <Typography variant="caption">
-                I hope your day goes well.
-              </Typography>
-            </Grid>
-          </Grid>
-        </Fade>
-      </Grid>
       <Fade timeout={4000} in>
         <Grid item>
-          <Divider light className={classes.spaced} />
           <Grid item className={classes.gridSection}>
             <Typography variant="h1">My Mission</Typography>
             <br />
