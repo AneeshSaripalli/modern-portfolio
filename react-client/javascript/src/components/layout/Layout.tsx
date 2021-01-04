@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: "5%",
       paddingRight: "5%",
     },
-    backgroundColor: "white",
   },
   body: {
     flex: 1,

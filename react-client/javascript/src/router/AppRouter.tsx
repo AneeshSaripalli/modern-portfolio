@@ -8,6 +8,7 @@ import NotFound from "pages/NotFound/NotFound";
 import Resume from "pages/Resume/Resume";
 import Work from "pages/Work/Work";
 import React from "react";
+import Particles from "../components/Particles/Particles";
 import { Route, Router, Switch } from "react-router-dom";
 
 const AppRouter = () => {
@@ -15,6 +16,17 @@ const AppRouter = () => {
 
   return (
     <Router history={history}>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <Particles />
+      </div>
       <ContentLayout header={<Header />} footer={<Footer />}>
         <Switch>
           <Route path="/" exact component={Home} />
