@@ -1,10 +1,9 @@
 export interface UserModel {
-    jwt: string
+  jwt: string;
 }
 
-
 const userModel: UserModel = {
-    jwt: ''
+  jwt: "",
 };
 
 export default userModel;
