@@ -25,16 +25,6 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: theme.spacing(1),
     },
   },
-  avatar: {
-    width: "64px",
-    height: "64px",
-    [theme.breakpoints.up("md")]: {
-      width: "128px",
-      height: "128px",
-    },
-    margin: theme.spacing(0, 2, 2, 0),
-    display: "inline-block",
-  },
   spaced: {
     marginBottom: theme.spacing(5),
   },

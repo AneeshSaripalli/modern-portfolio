@@ -1,6 +1,5 @@
-import { Grid } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import React from "react";
-import { makeStyles } from "@material-ui/core";
 
 type IProps = {
   footer?: React.ReactNode;
