@@ -10,8 +10,4 @@ RUN cd javascript && NODE_ENV=development npm install
 
 ADD javascript javascript
 
-ADD javascript/docker_scripts/start.sh .
-RUN chmod +x start.sh
-
-
 ENTRYPOINT [ "./start.sh" ]
