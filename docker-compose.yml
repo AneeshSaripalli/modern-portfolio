@@ -3,7 +3,6 @@ services:
   # react front end client
   react-client:
     stdin_open: true
-    image: react-client
     build:
       context: react-client
       dockerfile: Dockerfile.dev

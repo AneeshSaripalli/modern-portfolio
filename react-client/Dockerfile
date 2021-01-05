@@ -4,7 +4,6 @@ WORKDIR /app
 
 ADD javascript/package.json javascript/package.json 
 ADD javascript/tsconfig.json javascript/tsconfig.json 
-ADD javascript/.npmrc javascript/.npmrc
 
 RUN cd javascript && npm update
 RUN cd javascript && NODE_ENV=development npm install

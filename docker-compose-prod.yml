@@ -2,15 +2,11 @@ version: "3"
 services:
   # react front end client
   react-client:
-    stdin_open: true
-    image: react-client
     build:
       context: react-client
       dockerfile: Dockerfile
     env_file:
       - .env
-    ports:
-      - 3001:3000
   # gateway to proxy requests to both the client & node gateway
   nginx-gateway:
     restart: always
@@ -22,9 +18,3 @@ services:
     ports:
       - "80:80"
       - "443:443"
-  protobufs:
-    build:
-      context: ./protos
-      dockerfile: Dockerfile
-    env_file:
-      - .env
