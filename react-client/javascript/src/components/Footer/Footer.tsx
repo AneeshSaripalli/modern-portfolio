@@ -8,8 +8,8 @@ const useStyles = makeStyles((theme) => ({
   inner: {
     overflow: "hidden",
     textAlign: "center",
-    "&:before, &:after": {
-      backgroundColor: "#000000",
+    "&:before": {
+      backgroundColor: "#000",
       content: '""',
       display: "inline-block",
       height: "1px",
@@ -18,6 +18,17 @@ const useStyles = makeStyles((theme) => ({
       width: "50%",
       right: "0.5em",
       marginLeft: "-50%",
+    },
+    "&:after": {
+      backgroundColor: "#000",
+      content: '""',
+      display: "inline-block",
+      height: "1px",
+      position: "relative",
+      verticalAlign: "middle",
+      width: "50%",
+      left: "0.5em",
+      marginRight: "-50%",
     },
   },
 }));
