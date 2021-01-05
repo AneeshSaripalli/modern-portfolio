@@ -1,10 +1,9 @@
 import {
-  Avatar,
   Divider,
-  Fade,
+
   Grid,
   makeStyles,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
@@ -45,7 +44,6 @@ const Home = () => {
   const classes = useStyles();
   return (
     <Grid direction="column" container justify="flex-start">
-      <Fade timeout={4000} in>
         <Grid item>
           <Grid item className={classes.gridSection}>
             <Typography variant="h1">My Mission</Typography>
@@ -108,7 +106,6 @@ const Home = () => {
 
           <Links />
         </Grid>
-      </Fade>
     </Grid>
   );
 };

@@ -4,7 +4,6 @@ import {
   makeStyles,
   TextField,
   Typography,
-  Fade,
 } from "@material-ui/core";
 import clsx from "clsx";
 import React, { ChangeEvent, useState } from "react";
@@ -19,18 +18,6 @@ const useStyles = makeStyles((theme) => ({
   },
   h2: {
     marginBottom: theme.spacing(1),
-  },
-  fadeIn: {
-    animation: `$fadeIn 2000ms ${theme.transitions.easing.sharp}`,
-    display: "inline",
-  },
-  "@keyframes fadeIn": {
-    "0%": {
-      opacity: 0.2,
-    },
-    "100%": {
-      opacity: 1,
-    },
   },
   gridSection: {
     marginBottom: theme.spacing(5),
@@ -95,46 +82,40 @@ const Work: React.FC<{}> = (props) => {
         item
         alignItems="center"
         justify="flex-start"
-        className={clsx([classes.gridSection, classes.fadeIn])}
+        className={clsx([classes.gridSection])}
       >
-        <Grid item>
+        <Grid container item>
           <Typography variant="h1">Work</Typography>
-          <br />
         </Grid>
         <Grid item>
-          <Typography
-            variant="caption"
-            className={clsx([classes.fadeIn, classes.filter])}
-          >
+          <Typography variant="body1" className={clsx([classes.filter])}>
             Some amazing projects I've been fortunate to work on with some great
             people!
           </Typography>
         </Grid>
       </Grid>
-      <Fade in timeout={4000}>
-        <Grid item>
-          <Grid container className={classes.gridSection}>
-            <Typography variant="h2">
-              If you're looking for any specific technologies, here's a place to
-              search.
-            </Typography>
-            <Grid container item lg={6}>
-              <TextField
-                fullWidth
-                label="Search (ex. React, Docker)"
-                placeholder="React.js"
-                className={classes.filter}
-                onChange={onFilterChange}
-              />
-            </Grid>
+      <Grid item>
+        <Grid container className={classes.gridSection}>
+          <Typography variant="h2">
+            If you're looking for any specific technologies, here's a place to
+            search.
+          </Typography>
+          <Grid container item lg={6}>
+            <TextField
+              fullWidth
+              label="Search (ex. React, Docker)"
+              placeholder="React.js"
+              className={classes.filter}
+              onChange={onFilterChange}
+            />
           </Grid>
-          <Divider light className={classes.spaced} placeholder="React" />
-          <Industry entries={filterEntries(industry, filter)} />
-          <Divider light className={classes.spaced} />
-
-          <Consulting entries={filterEntries(consulting, filter)} />
         </Grid>
-      </Fade>
+        <Divider light className={classes.spaced} placeholder="React" />
+        <Industry entries={filterEntries(industry, filter)} />
+        <Divider light className={classes.spaced} />
+
+        <Consulting entries={filterEntries(consulting, filter)} />
+      </Grid>
     </Grid>
   );
 };

@@ -72,7 +72,7 @@ const Consulting: React.FC<IProps> = ({ entries }) => {
           <Typography variant="subtitle1" className={classes.infoText}>
             {duration}
           </Typography>
-          <Typography variant="caption" className={classes.infoText}>
+          <Typography variant="body1" className={classes.infoText}>
             <i>My job in one sentence -</i>
           </Typography>
           <Typography variant="body2" className={classes.infoText}>

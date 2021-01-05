@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { ProjectEntry } from "static/text";
 
@@ -12,18 +12,6 @@ const useStyles = makeStyles((theme) => ({
   },
   h2: {
     marginBottom: theme.spacing(1),
-  },
-  fadeIn: {
-    animation: `$fadeIn 2000ms ${theme.transitions.easing.sharp}`,
-    display: "inline",
-  },
-  "@keyframes fadeIn": {
-    "0%": {
-      opacity: 0.2,
-    },
-    "100%": {
-      opacity: 1,
-    },
   },
   gridSection: {
     marginBottom: theme.spacing(5),
@@ -72,7 +60,7 @@ const Industry: React.FC<IProps> = ({ entries }) => {
           <Typography variant="subtitle1" className={classes.infoText}>
             {duration}
           </Typography>
-          <Typography variant="caption" className={classes.infoText}>
+          <Typography variant="body1" className={classes.infoText}>
             <i>My job in one sentence -</i>
           </Typography>
           <Typography variant="body2" className={classes.infoText}>

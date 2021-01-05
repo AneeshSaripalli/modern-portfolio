@@ -1,7 +1,7 @@
-import { Fade, Grid, makeStyles, Typography, Button } from "@material-ui/core";
+import { Button, Fade, Grid, makeStyles, Typography } from "@material-ui/core";
+import clsx from "clsx";
 import React from "react";
 import { useLocation } from "react-router";
-import clsx from "clsx";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -64,11 +64,9 @@ const NotFound: React.FC<{}> = (props) => {
       style={{ height: "100%" }}
     >
       <Grid item className={classes.box}>
-        <Fade in timeout={1000}>
-          <Typography variant="h1" className={classes.notFound}>
-            I'm sorry, I can't find the path <u>{history.pathname}</u>
-          </Typography>
-        </Fade>
+        <Typography variant="h1" className={classes.notFound}>
+          I'm sorry, I can't find the path <u>{history.pathname}</u>
+        </Typography>
       </Grid>
       <Grid item className={classes.notFoundCaption}>
         <Fade in timeout={3000}>
@@ -77,7 +75,7 @@ const NotFound: React.FC<{}> = (props) => {
               Maybe you'd find what you're looking for on the landing page?
               <br />
             </Typography>
-            <Typography variant="caption" className={classes.subtitle}>
+            <Typography variant="body1" className={classes.subtitle}>
               It's a pretty cool landing page.
             </Typography>
           </div>
@@ -89,7 +87,7 @@ const NotFound: React.FC<{}> = (props) => {
             variant="text"
             className={clsx([classes.bounce, classes.routeBtn])}
           >
-            Jump to home!
+            Jump to home
           </Button>
         </Link>
       </Grid>
