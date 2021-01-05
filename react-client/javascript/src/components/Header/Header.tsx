@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 0, 2, 0),
     borderBottom: "1px solid rgba(100, 100, 100, 0.2)",
   },
+  image: {
+    width: theme.spacing(8),
+    height: theme.spacing(8),
+    borderRadius: theme.spacing(8),
+  },
 }));
 
 const Header: React.FC<{}> = (props) => {

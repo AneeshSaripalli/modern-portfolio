@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { ConsultingEntry } from "static/text";
 
