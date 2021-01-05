@@ -8,7 +8,7 @@ services:
     env_file:
       - .env
     ports: 
-      - "3001:3001"
+      - 3001:3000
   # gateway to proxy requests to both the client & node gateway
   nginx-gateway:
     restart: always
